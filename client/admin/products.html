@@ -1,0 +1,26 @@
+<h3>Products</h3>
+
+<a class="btn btn-success" href="#!/product/new">New Product</a>
+<br>
+
+<table id="product_table" class="table table-striped">
+	<tr>
+		<th>Name</th><th>Description</th><th>Price</th><th>Image</th><th>Tags</th><th>Actions</th>
+	</tr>
+	<tr ng-repeat="product in all_products">
+		<td>
+			<a href="#!/product/{{ product._id }}">{{ product.name }}</a><br>
+			<span class="small">{{ product._id }}</span>
+		</td>
+		<td class="small">{{ product.description }}</td>
+		<td>{{ product.price | currency:"$"}}</td>
+		<td>
+			<img src="../img/products/{{ product.main_img }}" alt="{{ product.name }}">
+		</td>
+		<td>{{ product.tags }}</td>
+		<td>
+			<a class='btn btn-default' ng-click="deleteProduct(product._id)">Delete</a>
+			<a class="btn btn-default" href="#!/product/update/{{product._id}}">Update</a>
+		</td>
+	</tr>
+</table>

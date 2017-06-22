@@ -1,0 +1,53 @@
+<h3>Edit Product</h3>
+
+<form id="edit_product_form" ng-submit="updateProduct()">
+	<table>
+		<tr>
+			<td><img src="../img/products/{{ product.main_img }}" alt="main_img" width="150"></td>
+		</tr>
+		<tr>
+			<td>ID:</td><td>{{ product._id }}</td>
+		</tr>
+		<tr>
+			<td>Name:</td><td><input type="text" ng-model="product.name" size="100"></td>
+		</tr>
+		<tr>
+			<td>Average rating:</td><td><input type="text" ng-model="product.avg_rating"></td>
+		</tr>
+		<tr>
+			<td>Price</td><td><input type="text" ng-model="product.price"></td>
+		</tr>
+		<tr>
+			<td>Image files:</td>
+			<td>
+				<input type="text" ng-model="product.color1"><input type="text" ng-model="product.color1_image"> 
+				<br>
+				<input type="text" ng-model="product.color2"><input type="text" ng-model="product.color2_image"> <br>
+				<input type="text" ng-model="product.color3"><input type="text" ng-model="product.color3_image">
+				<br>
+				<input type="text" ng-model="product.main_img" placeholder="main image"> Main image<br>
+				<input type="text" ng-model="product.model1_image" placeholder="model image">Model image<br>
+				<input type="text" ng-model="product.model2_image" placeholder="model image2">Model image2<br>
+				<input type="text" ng-model="product.model3_image" placeholder="model image3">Model image3
+			</td>
+		</tr>
+		<tr>
+			<td>Description</td><td><input type="text" ng-model="product.description" size="100"></td>
+		</tr>
+		<tr>
+			<td>Tags:</td>
+			<td>
+				<input type="text" ng-model="product.tag1"> <br>
+				<input type="text" ng-model="product.tag2"> <br>
+				<input type="text" ng-model="product.tag3"> <br>
+				<input type="text" ng-model="product.tag4"> <br>
+				<input type="text" ng-model="product.tag5"> <br>
+				<input type="text" ng-model="product.tag6"> <br>
+				<input type="text" ng-model="product.tag7"> <br>
+			</td>
+		</tr>
+		<tr>
+			<td><input class="btn btn-success" type="submit" value="Update Product"></td>
+		</tr>
+	</table>
+</form>

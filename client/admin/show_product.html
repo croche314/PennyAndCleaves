@@ -1,0 +1,51 @@
+<style type="text/css">
+	.label {
+		font-size: 12px;
+	}
+	td {
+		height: 50px;
+	}
+</style>
+<h3>{{ product.name }}</h3>
+<table>
+	<tr>
+		<td><span class="label label-default">ID:</span></td><td>{{ product._id }}</td>
+	</tr>
+	<tr>
+		<td><span class="label label-default">Description:</span></td><td colspan="2"><i>{{ product.description }}</i></td>
+	</tr>
+	<tr>
+		<td><span class="label label-default">Price:</span></td><td>{{ product.price | currency:"$"}}</td>
+	</tr>
+	<tr>
+		<td><span class="label label-default">color1:</span></td><td>{{ product.color1 }}</td>
+		<td><img src="../img/products/{{ product.color1_img }}" width="150"></td>
+	</tr>
+	<tr>
+		<td><span class="label label-default">color2:</span></td><td>{{ product.color2 }}</td>
+		<td><img src="../img/products/{{ product.color2_img }}" width="150"></td>
+	</tr>
+	<tr>
+		<td><span class="label label-default">color3:</span></td><td>{{ product.color3 }}</td>
+		<td><img src="../img/products/{{ product.color3_img }}" width="150"></td>
+	</tr>
+	<tr>
+		<td><span class="label label-default">Main image:</span></td><td>{{ product.main_img }}</td>
+		<td><img src="../img/products/{{ product.main_img }}" width="150"></td>
+	</tr>
+	<tr>
+		<td><span class="label label-default">Model image:</span></td><td>{{ product.model_img }}</td>
+		<td><img src="../img/products/{{ product.model_img }}" width="150"></td>
+	</tr>
+	<tr>
+		<td><span class="label label-default">Model image2</span></td><td>{{ product.model_img2 }}</td>
+		<td><img src="../img/products/{{ product.model_img2 }}" width="150"></td>
+	</tr>
+	<tr>
+		<td colspan="2"><span class="label label-default">Tags:</span></td>
+		<td>
+			{{ product.tag1 }} {{ product.tag2 }} {{ product.tag3 }} {{ product.tag4 }}
+		</td>
+	</tr>
+</table>
+<a class="btn btn-success" href="/admin">Back</a>

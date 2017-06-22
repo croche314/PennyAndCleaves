@@ -1,0 +1,89 @@
+<h3 class="category_heading">Checkout</h3>
+
+<hr>
+
+<!-- Force User to log in -->
+<div ng-controller="StoreController" ng-if="!currentUser.email">
+	<div class="text-center">Please log in before completing your purchase...</div>
+
+	<div class="row">
+		<form id="form_login" class="centered-form" ng-submit="loginUser()">
+			<div class="form-group">
+				<input class="form-control" type="text" ng-model="user_login.email" placeholder="email">
+			</div>
+			<div class="form-group">
+				<input class="form-control" type="password" ng-model="user_login.password" placeholder="password">
+			</div>
+			<br>
+			<input class="btn_dark" type="submit" value="Log In">
+		</form>	
+		<p class="text-center">
+			Or register <a href="#!/login#register">here</a>
+		</p>
+	</div>
+</div>
+
+<!-- Review Order -->
+<div class="row" ng-if="currentUser._id">
+	<div id="review" class="col-sm-4 col-sm-offset-2">
+		<!-- Shipping Info -->
+		<ul class="list-unstyled">
+			<h4>Ship To:</h4>
+			<li>{{ currentUser.first_name }} {{ currentUser.last_name }}</li>
+			<li>{{ currentUser.phone }}</li>
+			<li>{{ currentUser.address }}</li>
+			<li>{{ currentUser.city }}, {{ currentUser.state }} {{ currentUser.zip_code }}</li>
+		</ul>
+
+		<br>
+
+		<!-- Order Total -->
+		<ul class=list-unstyled>
+		<h4>Order Total:</h4>
+			<li>Subtotal: <span ng-bind="bagSubtotal | currency : '$'"></span></li>
+			<li>Tax: <span ng-bind="tax | currency: '$'"></span></li>
+			<li>Shipping: <span>Free</span></li>
+			<li><strong>Total: <span ng-bind="bagSubtotal + tax | currency: '$'"></span></strong></li>
+		</ul>
+	</div>
+
+	<!-- Order Details -->
+	<div class="col-sm-6">
+		<div ng-repeat="item in bag track by $index" class='row'>
+			<!-- image -->
+			<div class="col-sm-2">
+				<img class="img-responsive img-rounded thumbnail" src="../img/products/{{ item.img }}" alt="{{item.name}}">
+			</div> <!-- .col -->
+
+			<!-- name -->
+			<div class="col-sm-5">
+					<strong>{{ item.name }}</strong>
+				<!-- size, color, price -->
+				<ul class="list-unstyled">
+					<li>size: <strong>{{ item.size }}</strong></li>
+					<li>color: <strong>{{ item.color }}</strong></li>
+					<li>price: <strong>{{ item.price | currency:"$" }}</strong></li>
+				</ul>
+			</div> <!-- .col -->
+
+			<!-- quantity -->
+			<div class="col-sm-1">
+				x {{ item.quantity }}
+			</div> <!-- .col -->
+
+			<!-- subtotal -->
+			<div class="col-sm-1 col-sm-offset-1">
+				<strong>
+					{{ item.price * item.quantity | currency:'$' }}
+				</strong>
+			</div> <!-- .col -->
+	</div>
+</div> <!-- .row -->
+
+<div class="row">
+	<div class="col-sm-12">
+		<hr>
+		<a class="btn_checkout_lg btn_dark centered-form" href="" ng-if="currentUser._id" ng-click="placeOrder()">Place Order</a>
+	</div>
+</div>
+

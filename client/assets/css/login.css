@@ -1,0 +1,8 @@
+#form_login, #btn_register {
+	width: 25%;
+}
+
+#register label {
+	font-weight: normal;
+}
+

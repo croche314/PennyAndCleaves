@@ -1,0 +1,79 @@
+<script>
+	// Dark footer background is making single page app look very choppy
+	// when page loads.  It comes back into view after a second. (See script // at bottom of page)
+	$('footer').hide();
+</script>
+
+<h3 class="category_heading">{{ category }}</h3>
+
+
+<div id="wrapper" class="row">
+	
+
+	<div id="left_column" class="col-sm-2">
+		<!-- LEFT COLUMN -->
+		<div id="left_navigation">
+			<!--<input type="text" ng-model="searchText" placeholder="search">-->
+
+			<!-- SUBCATEGORIES -->
+			<div class="subcategories" ng-repeat="(key,value) in categories">
+				<hr>
+				<p class="caps"><a href="#!/shop/{{ key }}">{{ key }}</a></p>
+				<ul class="subcategory_list" ng-repeat="tag in value track by $index" ng-if="category == key">
+					<li><a href="#!/shop/{{ key }}/{{ tag }}">{{ tag }}</a></li>
+				</ul>
+			</div>
+		</div> <!-- #left_navigation -->
+	</div> <!-- #left_column -->
+
+	<!-- MAIN CONTENT -->
+	<div id="main_content" class="col-sm-10">
+		
+		<h3 class="" ng-show="subcategory">{{ subcategory }}</h3>
+
+		<div class="row" ng-hide="subcategory" ng-repeat="(subcat,list) in sorted_products">
+			<div class="subcategory">
+				<h3>{{ subcat }}</h3>
+				<div class="product col-sm-4" ng-repeat="product in list | filter:searchText">
+					<a href="#!/view_product/{{ product._id }}">
+						<img src="../img/products/{{ product.main_img }}" alt="{{ product.name }}">
+						<h4>{{ product.name }}</h4>
+						<span class="price">{{ product.price | currency:"$" }}</span>
+					</a>
+				</div> <!-- .product -->
+			</div>
+		</div> <!-- .row -->
+
+		<div class="row" ng-show="subcategory">
+			<div class="product col-sm-4" ng-repeat="product in products">
+				<a href="#!/view_product/{{ product._id }}">
+					<img src="../img/products/{{ product.main_img }}" alt="{{ product.name }}">
+					<h4>{{ product.name }}</h4>
+					<span class="price">{{ product.price | currency:"$" }}</span>
+				</a>
+			</div> <!-- .product -->
+		</div> <!-- .row -->
+	</div> <!-- #main_content -->
+</div> <!-- #wrapper .row -->
+<script>
+    $("document").ready(function($){
+        
+        // Hide fixed navigation (left) if scrolling near bottom
+        var leftNav = $('#left_navigation');
+        $(window).scroll(function () {
+        	var scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop();
+           if (scrollBottom < 150) {
+               leftNav.addClass("hidden");
+           } else {
+               leftNav.removeClass("hidden");
+           }
+        });
+
+        // Display footer after 200 ms
+        setTimeout(function() {
+			//$('#hide_all').hide();
+			$('footer').show();
+		},200);
+
+    }); // end ready
+</script>

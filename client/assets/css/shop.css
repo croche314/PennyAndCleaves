@@ -1,0 +1,264 @@
+.caps {
+	text-transform: uppercase;
+}
+
+.center {
+	text-align: center;
+}
+
+.hidden {
+	display: none;
+}
+
+.block {
+	display: block;
+}
+
+.block-center {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.button {
+	text-align: center;
+	font-family: 'Montserrat';
+	text-transform: uppercase;
+	font-size: 15px;
+	background-color: #fff;
+	color: black;
+	border: 1px solid black;
+	text-decoration: none;
+	padding: 10px 40px;
+}
+
+.button:hover {
+	text-decoration: none;
+	background-color: #333;
+	color: #fff;
+	cursor: pointer;
+}
+
+/**************************
+	shop.html
+***************************/
+#wrapper {
+	margin-top: 50px;
+}
+
+.category_heading {
+	font-family: 'Montserrat';
+	text-transform: uppercase;
+	text-align: center;
+	margin: 35px 0;
+}
+
+h3.category_heading {
+	margin-top: 50px;
+}
+
+/* LEFT COLUMN */
+
+#left_navigation {
+	position: fixed;
+	top: 200px;
+	left: 30px;
+	background-color: #fff;
+	z-index: 999;
+}
+
+.subcategories {
+	font-size: 12px;
+}
+
+.subcategories hr {
+	margin: 5px 0;
+	display: none;
+}
+
+.subcategories p {
+	margin: 20px 0 0 0;
+}
+
+.subcategories a {
+	color: black;
+	border-bottom: 2px solid #fff;
+}
+
+.subcategories a:hover {
+	color: black;
+	text-decoration: none;
+	border-bottom: 2px solid black;
+}
+
+.subcategory_list {
+	padding-left: 15px;
+	margin: 10px 0;
+	list-style-type: none;
+}
+
+.subcategory_list li {
+	margin: 0;
+}
+
+/* MAIN CONTENT (products) */
+
+.subcategory h3 {
+	padding-left: 15px;
+}
+
+.product {
+	height: 370px;
+	margin-top: 5px;
+}
+
+.product img {
+	width: 100%;
+}
+
+.product h4 {
+	display: inline-block;
+	width: 75%;
+	font-weight: 300;
+	font-size: 14px;
+}
+
+.product a {
+	color: #333;
+}
+
+/**************************
+	show_product.html
+***************************/
+
+#showcase img {
+	width: 100%;
+}
+
+#left_sidebar img {
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+.border {
+	border: 1px solid black;
+}
+
+.product_name {
+	font-weight: 400;
+	font-size: 20px;
+}
+
+.stars img {
+	width: 20px;
+}
+
+.product_price {
+	font-size: 20px;
+}
+
+#reviews_link {
+	margin-left: 25px;
+}
+
+.current_color, .current_size {
+	font-size: 16px;
+}
+
+.color_choices {
+	list-style-type: none;
+	display: inline;
+	padding: 0;
+}
+
+.color_choices li {
+	display: inline-block;
+	width: 100px;
+}
+
+.color_image {
+	display: inline;
+	width: 100%;
+}
+
+.color_choices img {
+	border: 1px solid #fff;
+}
+.color_choices img:hover {
+ 	border: 1px solid black;
+ 	cursor: pointer;
+ }
+
+ .shirt_size, .pant_size, .blazer_size {
+ 	font-size: 12px;
+ 	padding: 0;
+ 	display: inline-block;
+ 	list-style-type: none;
+ }
+
+ .shirt_size li:hover, .pant_size li:hover, .blazer_size li:hover {
+ 	background-color: #EEE;
+ 	cursor: pointer;
+ }
+
+ .shirt_size li {
+ 	border: 1px solid #333;
+ 	padding: 5px 20px;
+ 	margin: 4px;
+ }
+
+ .pant_size li {
+ 	border: 1px solid #333;
+ 	padding: 5px 7px;
+ 	margin: 0 4px;
+ }
+
+ .blazer_size li {
+ 	border: 1px solid #333;
+ 	padding: 5px 7px;
+ 	margin: 2px;
+ }
+
+ /* REVIEWS */
+
+ #reviews {
+ 	margin-top: 50px;
+ 	margin-bottom: 25px;
+ }
+
+ .review_container {
+ 	text-align: center;
+ 	margin: 10px;
+ 	padding: 30px;
+ 	height: 250px;
+ 	border: 1px solid #DDD;
+ }
+
+ .review {
+ 	font-size: 12px;
+ }
+
+ .review h4 {
+ 	font-size: 14px;
+ }
+
+ .review_text {
+ 	text-align: left;
+ }
+
+ .review img {
+ 	width: 15px;
+ }
+
+ .review_author {
+ 	text-align: left;
+ }
+
+ .review_location {
+ 	text-align: left;
+ }
+
+ #suggestions {
+ 	margin-top: 50px;
+ }
+

@@ -1,0 +1,136 @@
+<!-- ROW 1: PRODUCT DETAILS -->
+<div id="wrapper" class="row">
+	<!-- LEFT COLUMN -->
+	<div id="left_sidebar" class="col-sm-2 hidden-xs">
+		<a href="" ng-repeat="image in product.model_images"><img src="../img/products/{{ image }}" ng-click="changeImage(image)"></a>
+		<br>
+	</div>
+
+	<!-- MIDDLE COLUMN -->
+	<div id="showcase" class="col-sm-6">
+		<img src="../img/products/{{ currentImage }}" alt="{{ product.name }}">
+	</div>
+
+	<!-- RIGHT COLUMN -->
+	<div id="details" class="col-sm-4">
+		<!-- NAME -->
+		<p class="product_name">{{ product.name }}</p>
+
+		<!-- STAR RATING -->
+		<p class="stars">
+			<a href="#!view_product/{{ product._id }}/#reviews">
+				<img src="../img/icons/star.png" alt="star rating" ng-repeat="star in avg_rating">
+			</a>
+			<a id="reviews_link" href="#!view_product/{{ product._id }}/#reviews" ng-show="reviews">
+				13 reviews
+			</a>
+		</p>
+		<p class="product_price">{{ product.price | currency:"$" }}
+
+		<!-- COLOR -->
+		<p class="current_color">color: {{ currentColor }}</p>
+		<ul class="color_choices" ng-repeat= "image in color_images track by $index">
+		<li><img class="color_image" src="../img/products/{{ image }}" ng-click="changeImage(image,$index)"></span></li>
+		</ul>
+		<br>
+		<br>
+
+		<!-- SIZE -->
+		<div class="current_size" ng-show="category == 'pants'">
+			<p>waist: {{ waist }}</p>
+			<ul class="pant_size" ng-repeat="size in pant_waist_range">
+				<li ng-model="waist_size" ng-click="selectWaist(size)">{{ size }}</li>
+			</ul>
+			<p>inseam: {{ inseam }}</p>
+			<ul class="pant_size" ng-repeat="size in pant_inseam_range">
+				<li ng-model="inseam_size" ng-click="selectInseam(size)">{{ size }}</li>
+			</ul>
+		</div>
+
+		<div class="current_size" ng-show="category == 'shirts'">
+			<p>size: {{ shirtSize }}</p>
+			<ul class="shirt_size" ng-repeat="size in shirt_size_range">
+				<li ng-click="selectShirtSize(size)">{{ size }}</li>
+			</ul>
+		</div>
+
+		<div class="current_size" ng-show="category == 'shoes'">
+			<p>size: {{ shoeSize }}</p>
+			<ul class="shirt_size" ng-repeat="size in shoe_size_range">
+				<li ng-click="selectShoeSize(size)">{{ size }}</li>
+			</ul>
+		</div>
+
+		<div class="current_size" ng-show="category == 'blazers'">
+			<p>size: {{ blazerSize }}</p>
+			<ul class="blazer_size" ng-repeat="size in blazer_size_range">
+				<li ng-click="selectBlazerSize(size)">{{ size }}</li>
+			</ul>
+		</div>
+
+		<!-- QUANTITY -->
+		<p ng-init="quantity = 1">quantity: <input type="text" ng-model="quantity" size="2"></p>
+		<br>
+
+		<!-- ADD TO CART -->
+		<a class="btn_dark" href="" ng-click="addToCart()">Add To Cart</a>
+
+	</div>
+
+</div> <!-- #wrapper .row -->
+
+<!-- ROW 2: REVIEWS -->
+<div id="reviews" class="row">
+	<p class="caps col-sm-12">Customer Reviews</p>
+	<div class="review col-sm-4">
+		<div class="review_container">
+			<img src="../img/icons/star.png" alt="star rating">
+			<h4>Great fit but dirt magnet</h4>
+			<p class="review_date">May 3, 2017</p>
+			<p class="review_text">"I baught the Navy pants sometime back and was very excited after trying them on the first time. Fit is great and the ..."&nbsp;&nbsp;<a href="">show more</a></p>
+			<p class="review_author">-pgandh</p>
+			<p class="review_location"><i>Jersey City</i></p>
+		</div>
+	</div> <!-- .review -->
+
+	<div class="review col-sm-4">
+		<div class="review_container">
+			<img src="../img/icons/star.png" alt="star rating" ng-repeat="star in [0,1,2,3,4]">
+			<h4>Great work pants</h4>
+			<p class="review_date">April 23, 2017</p>
+			<p class="review_text">"Recently purchased the slim chino. I love them. They look and feel like they were made for me."</p>
+			<p class="review_author">-kelvin</p>
+			<p class="review_location"><i>New Jersey</i></p>
+		</div>
+	</div> <!-- .review -->
+
+	<div class="review col-sm-4">
+		<div class="review_container">
+			<img src="../img/icons/star.png" alt="star rating" ng-repeat="star in [0,1,2,3,4]">	
+			<h4>Great pant that is slim, but not too slim</h4>
+			<p class="review_date">April 19, 2017</p>
+			<p class="review_text">"Great looking pant. I have the grey pair and blue pair. Both fit great (I am 5'11" and 170lb, wear a 32/30). These pants ..."&nbsp;&nbsp;<a href="">show more</a></p>
+			<p class="review_author">-deesh</p>
+			<p class="review_location"><i></i></p>
+		</div>
+	</div> <!-- .review -->
+
+</div> <!-- #reviews .row -->
+
+<div class="center">
+	<a class="button">See more reviews</a>
+</div>
+
+
+<!-- ROW 3: SUGGESTIONS -->
+<div id="suggestions" class="row">
+<p class="caps col-sm-12">You Might Also Like</p>
+	<div class="suggested_product product col-sm-2" ng-repeat="product in suggestions">
+		<a href="#!/view_product/{{ product._id }}">
+			<img src="../img/products/{{ product.main_img }}" alt="{{ product.name }}">
+			<h4>{{ product.name }}</h4>
+			<span class="price">{{ product.price | currency:"$" }}</span>
+		</a>
+	</div>
+</div> <!-- #suggestions .row -->
+

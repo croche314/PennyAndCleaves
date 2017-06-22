@@ -1,0 +1,72 @@
+<h3 class="category_heading">Shopping Bag</h3>
+
+<p class="text-center" ng-if="bag.length < 1">Your shopping bag is empty!</p>
+
+<div id="wrapper" class="row">
+	<div id="shopping_bag" class="col-sm-8 col-sm-offset-1">
+		
+		<div ng-if="bag.length > 0" ng-repeat="item in bag track by $index" class='row'>
+		<hr>
+			<!-- image -->
+			<div class="col-sm-2">
+				<a href="#!/view_product/{{ item.product_id }}">
+					<img class="img-responsive img-rounded thumbnail" src="../img/products/{{ item.img }}" alt="{{item.name}}">
+				</a>
+			</div> <!-- .col -->
+
+			<!-- name -->
+			<div class="col-sm-5">
+				<a href="#!/view_product/{{ item.product_id }}">
+					<strong>{{ item.name }}</strong>
+				</a>
+				<!-- size, color, price -->
+				<ul class="list-unstyled">
+					<li>size: <strong>{{ item.size }}</strong></li>
+					<li>color: <strong>{{ item.color }}</strong></li>
+					<li>price: <strong>{{ item.price | currency:"$" }}</strong></li>
+				</ul>
+			</div> <!-- .col -->
+
+			<!-- quantity -->
+			<div class="col-sm-1">
+				<select class="form-control" ng-model="item.quantity" ng-options="q for q in quantities" ng-change="updateBagSubtotal()">
+				</select>
+			</div> <!-- .col -->
+
+			<!-- subtotal -->
+			<div class="col-sm-1 col-sm-offset-1">
+				<strong>
+					{{ item.price * item.quantity | currency:'$' }}
+				</strong>
+			</div> <!-- .col -->
+
+			<!-- remove -->
+			<div class="col-sm-1 col-sm-offset-1">
+				<a class='btn btn-default' href="" ng-click="removeLineItem($index)">Remove</a>
+			</div> <!-- .col -->
+		</div> <!-- .row (repeat) -->
+	</div> <!-- #shopping_bag -->
+
+	<!-- Checkout Buttons -->
+	<div class="row" ng-if="bag.length > 0">
+			<div class="col-sm-12">
+				<a class=" btn_checkout_lg btn_dark centered-form" href="#!/checkout">Checkout</a>
+				<a class="btn_checkout_lg btn_light centered-form" href="" ng-click="emptyBag()">Empty Bag</a>
+			</div>
+	</div>
+
+	<!-- Checkout Summary -->
+	<div id="summary" class="col-sm-2 col-sm-offset-1">
+		<span>{{ bag.length }} items</span>
+		<ul class="list-unstyled">
+			<li>Subtotal: <span ng-bind="bagSubtotal | currency : '$'"></span></li>
+			<li>Tax: <span ng-bind="tax | currency: '$'"></span></li>
+			<li>Shipping: <span>Free</span></li>
+			<hr>
+			<li><strong class="white">Total: <span ng-bind="bagSubtotal + tax | currency: '$'"></span></strong></li>
+		</ul>
+		<a class="btn_light" href="#!/checkout" ng-if="bag.length > 0">Checkout</a>
+	</div> <!-- .col -->
+
+	
+</div> <!-- #wrapper .row -->

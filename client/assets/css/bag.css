@@ -1,0 +1,28 @@
+#summary {
+	position: fixed;
+	top: 200px;
+	right: 0;
+	background-color: #333;
+	color: #F9F9F9;
+	padding: 15px;
+}
+
+#summary h5 {
+	text-transform: uppercase;
+}
+
+#summary li {
+	margin: 20px 0;
+}
+
+.btn_checkout_lg {
+	width: 40%;
+}
+
+#review {
+	font-size: 16px;
+}
+
+#review h4 {
+	font-size: 20px;
+}

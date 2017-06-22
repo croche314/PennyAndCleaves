@@ -1,0 +1,59 @@
+<html ng-app="app">
+<head>
+	<meta charset="utf-8">
+
+	<title>Penny &amp; Cleaves Admin</title>
+
+	<!-- JQUERY + BOOTSTRAP -->
+	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Slab|Montserrat" rel="stylesheet"> 
+
+	<style>
+		body {
+			font-family: 'Arial';
+			font-size: 18px;
+			margin: 50px;
+		}
+		.button {
+			display: block;
+			font-family: 'Comic Sans MS';
+			font-size: 15px;
+			background-color: #fff;
+			color: black;
+			border: 2px solid black;
+			box-shadow: 1px 1px 2px black;
+			text-decoration: none;
+			padding: 5px;
+		}
+		.branding {
+			font-family: 'Josefin Slab';
+			text-align: center;
+		}
+		.small {
+			font-size: 10px;
+		}
+		#product_table img {
+			width: 100px;
+		}
+		
+	</style>
+	<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+	<script type="text/javascript" src="../bower_components/angular-route/angular-route.js"></script>
+	<script type="text/javascript" src="admin.js"></script>
+	
+</head>
+<body>
+	<div id="admin_container">
+		<h1>Admin</h1>
+		<a class="btn btn-primary" href="/">Penny &amp; Cleaves.com</a>
+		<a class="btn btn-primary" href="#!/products">Products</a>
+		<a class="btn btn-primary" href="#!/users">Users</a>
+		<a class="btn btn-primary" href="#!/orders">Orders</a>
+		<div ng-view="">
+			
+		</div>
+	</div> <!-- #container -->
+</body>
+</html>

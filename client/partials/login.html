@@ -1,0 +1,89 @@
+<script>
+	// Dark footer background is making single page app look very choppy
+	// when page loads.  It comes back into view after a second. (See script // at bottom of page)
+	$('footer').hide();
+</script>
+
+<h3 class="category_heading">Login</h3>
+
+
+<div id="wrapper" class="row">
+	<form id="form_login" class="centered-form" ng-submit="loginUser()">
+		<div class="form-group">
+			<input class="form-control" type="text" ng-model="user_login.email" placeholder="email">
+		</div>
+		<div class="form-group">
+			<input class="form-control" type="password" ng-model="user_login.password" placeholder="password">
+		</div>
+		<br>
+		<input class="btn_dark" type="submit" value="Log In">
+	</form>	
+
+	<br>
+	<p class="text-center">
+		Not a registered user yet?
+		<br>
+		<a href="" ng-click="showRegisterForm()">Register here</a>
+	</p>
+
+	<form id="register" ng-show="register" ng-submit="registerUser()">
+		<div class="col-sm-3 col-sm-offset-3">
+			<div class="form-group">
+				<label>email</label>
+				<input class="form-control" type="text" ng-model="user.email">
+			</div>
+			<div class="form-group">
+				<label>password</label>
+				<input class="form-control" type="password" ng-model="user.password">
+			</div>
+			<div class="form-group">
+				<label>first name</label>
+				<input class="form-control" type="text" ng-model="user.first_name">
+			</div>
+			<div class="form-group">
+				<label>last name</label>
+				<input class="form-control" type="text" ng-model="user.last_name">
+			</div>
+			<div class="form-group">
+				<label>phone</label>
+				<input class="form-control" type="text" ng-model="user.phone">
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="form-group">
+				<label>address</label>
+				<input class="form-control" type="text" ng-model="user.address">
+			</div>
+			<div class="form-group">
+				<label>city</label>
+				<input class="form-control" type="text" ng-model="user.city">
+			</div>
+			<div class="form-group">
+				<label>state</label>
+				<input class="form-control" type="text" ng-model="user.state">
+			</div>
+			<div class="form-group">
+				<label>zip code</label>
+				<input class="form-control" type="text" ng-model="user.zip_code">
+			</div>
+		</div>
+		<div class="centered-form">
+			<input class="btn_dark" type="submit" value="Register">
+		</div>
+	</form>
+		
+
+
+	
+	
+</div> <!-- #wrapper .row -->
+<script>
+    $("document").ready(function($){
+	    // Display footer after 200 ms
+	    setTimeout(function() {
+				//$('#hide_all').hide();
+				$('footer').show();
+			},200);
+
+    }); // end ready
+</script>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="utf-8">
+
+	<title>Penny &amp; Cleaves</title>
+  <meta name="viewport" content="initial-scale=1">
+
+	<!-- JQUERY + BOOTSTRAP -->
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+	<!-- GOOGLE FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Slab|Montserrat:600,400,300,100" rel="stylesheet"> 
+
+	<!-- SCRIPTS -->
+	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+	<script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+	<script type="text/javascript" src="bower_components/toastr/toastr.min.js"></script>
+	<script type="text/javascript" src="assets/js/app.js"></script>
+	<script src="assets/js/factory.js"></script>
+	<script src="assets/js/controllers.js"></script>
+
+	<!-- STYLES -->
+	<link rel="stylesheet" type="text/css" href="/bower_components/toastr/toastr.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/login.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/shop.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/bag.css">
+
+</head>
+
+<body ng-controller="StoreController">
+	<div class="container-fluid">
+		<!-- HEADER -->
+		<header>
+			<div id="primary_head" class="row">
+				<ul class="primary_head_search col-sm-3"></ul>
+				<h1 class="branding col-sm-6">Penny &amp; Cleaves</h1>
+				<ul class="primary_head_nav col-sm-3">
+					<li ng-show="currentUser.first_name">
+					{{ message }}
+						Hi <a href="#!/customer/{{ currentUser._id }}">{{ currentUser.first_name }}</a>
+					</li>
+					<li ng-hide="currentUser.first_name"><a href="#!/login">Sign In</a></li>
+					<li>
+						<a href="#!/bag">
+							<span id="item_count">{{ bag.length }}</span>
+							<img src="../img/icons/shopping-bag.png" alt="shopping bag">
+							Bag
+						</a>
+					</li>
+					<li ng-show="currentUser.first_name">
+						<a href="" ng-click="logout()">Sign out</a>
+					</li>
+				</ul>
+			</div>
+			<!-- MAIN NAVIGATION -->
+			<nav>
+				<a href="#!/">Home</a>
+				<a href="#!/shop/shirts">Shirts</a>
+				<a href="#!/shop/pants">Pants</a>
+				<a href="#!/shop/blazers">Blazers</a>
+				<a href="#!/shop/shoes">Shoes</a>
+				<a href="#!/shop/accessories">Accessories</a>
+				<a href="#!/login">Sale</a>
+				<a href="#!/login#register">About</a>
+				<a href="#!/blog">Blog</a>
+				<a href="/admin">Admin</a>
+			</nav>
+		</header>
+
+		<!-- MAIN CONTENT -->
+		<div ng-view="" autoscroll="true">
+			
+		</div>
+
+		<!-- FOOTER -->
+		<footer id="footer" class="row">
+			<div class="col-sm-3 col-sm-offset-1">
+				<h4>How can we help?</h4>
+				<ul>
+					<li><a href="#">Order Status</a></li>
+					<li><a href="#">Shipping and Handling</a></li>
+					<li><a href="#">Returns and Exchanges</a></li>
+					<li><a href="#">International Order</a></li>
+					<li><a href="#">Size Charts</a></li>
+				</ul>
+			</div>
+			<div class="col-sm-3">
+				<h4>About Penny &amp; Cleaves</h4>
+				<ul>
+					<li><a href="#">Our Story</a></li>
+					<li><a href="#">Careers</a></li>
+					<li><a href="#">Social Responsibility</a></li>
+				</ul>
+				<br>
+				<h4>Penny &amp; Cleaves Credit Card</h4>
+				<ul>
+					<li><a href="#">Apply Today</a></li>
+					<li><a href="#">Manage Your Card</a></li>
+				</ul>
+			</div>
+			<div class="col-sm-3">
+				<h4>Keep in Touch</h4>
+				<form>
+					<input type="text" name="email" placeholder="Your email">
+					<input class="btn btn-default" type="submit" value="SIGN UP"> <br>
+					<span class="email_signup">Don't miss style news or the next big sale exclusive to email subscribers!</span>
+				</form>
+				<br>
+				<h4>Get to Know Us</h4>
+				<ul class="social_media_links">
+					<li><a href="#"><img src="../img/icons/social-facebook.png" alt="facebook logo"></li>
+					<li><a href="#"><img src="../img/icons/social-twitter.png" alt="twitter logo"></li>
+					<li><a href="#"><img src="../img/icons/social-tumblr.png" alt="tumblr logo"></li>
+					<li><a href="#"><img src="../img/icons/social-pinterest.png" alt="pinterest logo"></li>
+					<li><a href="#"><img src="../img/icons/social-instagram.png" alt="instagram logo"></li>
+					<li><a href="#"><img src="../img/icons/social-google-plus.png" alt="google-plus logo"></li>
+				</ul>
+			</div>
+		</footer>
+	</div> <!-- .container-fluid -->
+<script>
+$("document").ready(function($){
+	
+}); // end ready
+</script>
+</body>
+</html>
