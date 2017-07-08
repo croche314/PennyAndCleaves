@@ -1,0 +1,39 @@
+#jumbotron {
+		display: block;
+		width: 80%;
+		margin: 50px auto;
+	}
+	#jumbotron img {
+		display: block;
+		width: 90%;
+		margin: 0 auto;
+	}
+	.window {
+		display: inline-block;
+		color: #333;
+		width: 33.3%;
+		margin: 0 auto;
+		padding: 2%;
+	}
+	.window_left {
+		padding-left: 10%;
+	}
+	.window_right {
+		padding-right: 10%;
+	}
+	.window_middle {
+		padding: 2% 6%;
+	}
+	.window img {
+		width: 100%;
+	}
+	.window h3 {
+		text-transform: uppercase;
+		font-size: 16px;
+	}
+	.window p {
+		font-size: 12px;
+	}
+	.window a {
+		color: #333;
+	}

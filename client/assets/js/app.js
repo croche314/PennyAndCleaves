@@ -35,6 +35,18 @@ app.config(function($routeProvider) {
 		templateUrl: '../partials/thank_you.html',
 		controller: 'BagController'
 	})
+	.when('/about', {
+		templateUrl: '../partials/about.html',
+		controller: 'StoreController'
+	})
+	.when('/blog', {
+		templateUrl: '../partials/blog.html',
+		controller: 'StoreController'
+	})
+	.when('/coming_soon', {
+		templateUrl: '../partials/coming_soon.html',
+		controller: 'StoreController'
+	})
 });
 
 toastr.options = {

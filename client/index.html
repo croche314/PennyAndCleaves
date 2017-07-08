@@ -27,9 +27,13 @@
 	<!-- STYLES -->
 	<link rel="stylesheet" type="text/css" href="/bower_components/toastr/toastr.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/home.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/login.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/shop.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/bag.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/about.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/blog.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/responsive.css">
 
 </head>
 
@@ -58,19 +62,48 @@
 					</li>
 				</ul>
 			</div>
-			<!-- MAIN NAVIGATION -->
-			<nav>
+			<!-- MAIN NAVIGATION (Screens above 'xs') -->
+			<nav class="hidden-xs">
 				<a href="#!/">Home</a>
 				<a href="#!/shop/shirts">Shirts</a>
 				<a href="#!/shop/pants">Pants</a>
 				<a href="#!/shop/blazers">Blazers</a>
 				<a href="#!/shop/shoes">Shoes</a>
 				<a href="#!/shop/accessories">Accessories</a>
-				<a href="#!/login">Sale</a>
-				<a href="#!/login#register">About</a>
+				<a href="#!/about">About</a>
 				<a href="#!/blog">Blog</a>
-				<a href="/admin">Admin</a>
 			</nav>
+
+			<!-- MOBILE NAVIGATION ('xs' screens) -->
+			<div class="row visible-xs">
+        <nav id="mobile-nav" class="navbar navbar-inverse visible-xs" role="navigation">
+          <div class="container">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mobile-menu">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              </button>
+              <a href="#!/">
+              <h1 class="branding">Penny &amp; Cleaves</h1>
+          </a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="mobile-menu">
+            <ul class="nav navbar-nav">
+              <li><a href="#!/">Home</a></li>
+              <li><a href="#!/shop/shirts">Shirts</a></li>
+              <li><a href="#!/shop/pants">Pants</a></li>
+              <li><a href="#!/shop/blazers">Blazers</a></li>
+              <li><a href="#!/shop/shoes">Shoes</a></li>
+              <li><a href="#!/shop/accessories">Accessories</a></li>
+              <li><a href="#!/about">About</a></li>
+              <li><a href="#!/blog">Blog</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+          <!-- /.container-fluid -->
+        </nav> <!-- end Mobile Navigation -->
+      </div>
 		</header>
 
 		<!-- MAIN CONTENT -->
@@ -83,25 +116,25 @@
 			<div class="col-sm-3 col-sm-offset-1">
 				<h4>How can we help?</h4>
 				<ul>
-					<li><a href="#">Order Status</a></li>
-					<li><a href="#">Shipping and Handling</a></li>
-					<li><a href="#">Returns and Exchanges</a></li>
-					<li><a href="#">International Order</a></li>
-					<li><a href="#">Size Charts</a></li>
+					<li><a href="#!/coming_soon">Order Status</a></li>
+					<li><a href="#!/coming_soon">Shipping and Handling</a></li>
+					<li><a href="#!/coming_soon">Returns and Exchanges</a></li>
+					<li><a href="#!/coming_soon">International Order</a></li>
+					<li><a href="#!/coming_soon">Size Charts</a></li>
 				</ul>
 			</div>
 			<div class="col-sm-3">
 				<h4>About Penny &amp; Cleaves</h4>
 				<ul>
-					<li><a href="#">Our Story</a></li>
-					<li><a href="#">Careers</a></li>
-					<li><a href="#">Social Responsibility</a></li>
+					<li><a href="#!/about">Our Story</a></li>
+					<li><a href="#!/coming_soon">Careers</a></li>
+					<li><a href="#!/coming_soon">Social Responsibility</a></li>
 				</ul>
 				<br>
 				<h4>Penny &amp; Cleaves Credit Card</h4>
 				<ul>
-					<li><a href="#">Apply Today</a></li>
-					<li><a href="#">Manage Your Card</a></li>
+					<li><a href="#!/coming_soon">Apply Today</a></li>
+					<li><a href="#!/coming_soon">Manage Your Card</a></li>
 				</ul>
 			</div>
 			<div class="col-sm-3">
@@ -114,19 +147,21 @@
 				<br>
 				<h4>Get to Know Us</h4>
 				<ul class="social_media_links">
-					<li><a href="#"><img src="../img/icons/social-facebook.png" alt="facebook logo"></li>
-					<li><a href="#"><img src="../img/icons/social-twitter.png" alt="twitter logo"></li>
-					<li><a href="#"><img src="../img/icons/social-tumblr.png" alt="tumblr logo"></li>
-					<li><a href="#"><img src="../img/icons/social-pinterest.png" alt="pinterest logo"></li>
-					<li><a href="#"><img src="../img/icons/social-instagram.png" alt="instagram logo"></li>
-					<li><a href="#"><img src="../img/icons/social-google-plus.png" alt="google-plus logo"></li>
+					<li><a href="#!/coming_soon"><img src="../img/icons/social-facebook.png" alt="facebook logo"></li>
+					<li><a href="#!/coming_soon"><img src="../img/icons/social-twitter.png" alt="twitter logo"></li>
+					<li><a href="#!/coming_soon"><img src="../img/icons/social-tumblr.png" alt="tumblr logo"></li>
+					<li><a href="#!/coming_soon"><img src="../img/icons/social-pinterest.png" alt="pinterest logo"></li>
+					<li><a href="#!/coming_soon"><img src="../img/icons/social-instagram.png" alt="instagram logo"></li>
+					<li><a href="#!/coming_soon"><img src="../img/icons/social-google-plus.png" alt="google-plus logo"></li>
 				</ul>
 			</div>
 		</footer>
 	</div> <!-- .container-fluid -->
 <script>
 $("document").ready(function($){
-	
+	 $('.navbar-collapse ul li a').click(function(){ 
+            $('.navbar-toggle:visible').click();
+    });
 }); // end ready
 </script>
 </body>

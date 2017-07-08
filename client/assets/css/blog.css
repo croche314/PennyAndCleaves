@@ -1,0 +1,22 @@
+#blog_body {
+	width: 50%;
+	margin: 15px auto;
+}
+
+.blog-post {
+	margin: 25px 0;
+}
+
+.blog-post h3,h5 {
+    color: green;
+}
+
+.blog-post figure {
+    text-align: center;
+}
+
+.blog-img {
+    height: 300px;
+    margin: 15px 0;
+    border: 4px solid #000;
+}

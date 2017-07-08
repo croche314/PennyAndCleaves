@@ -1,0 +1,41 @@
+#about-us-body {
+    text-indent: 2em;
+    
+    width: 60%;
+    margin: 0 auto;
+}
+
+#about-us-body .row {
+    margin-bottom: 5%;
+}
+
+#about-us-body p {
+    line-height: 2em;
+}
+
+#about-us-body figure {
+    text-align: center;
+    font-size: .75em;
+    
+}
+
+.about-img {
+    height: 300px;
+    
+    border: 4px solid #000;
+}
+
+@media (max-width: 768px) {
+ #about-us-body {
+        width: 90%;
+    }
+    
+    #about-us-body figure {
+        margin-left: -5%;
+    }
+    
+    .about-img {
+        width: 80%;
+        height: auto;
+    }
+}

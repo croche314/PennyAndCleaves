@@ -38,7 +38,7 @@
 		<br>
 
 		<!-- Order Total -->
-		<ul class=list-unstyled>
+		<ul class="list-unstyled">
 		<h4>Order Total:</h4>
 			<li>Subtotal: <span ng-bind="bagSubtotal | currency : '$'"></span></li>
 			<li>Tax: <span ng-bind="tax | currency: '$'"></span></li>
@@ -48,7 +48,7 @@
 	</div>
 
 	<!-- Order Details -->
-	<div class="col-sm-6">
+	<div class="details col-sm-6">
 		<div ng-repeat="item in bag track by $index" class='row'>
 			<!-- image -->
 			<div class="col-sm-2">
